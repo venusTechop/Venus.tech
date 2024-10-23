@@ -63,7 +63,7 @@ end
 
 print("✅ xaxaxaxaxaxaxa")
 
-getgenv().jamkles = {
+
     ["Enabled"] = true,
     ["AimPart"] = "Head",
     ["Prediction"] = 0.12588,
