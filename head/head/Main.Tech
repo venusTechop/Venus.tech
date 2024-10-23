@@ -277,6 +277,31 @@ local ScreenGui = Instance.new("ScreenGui")
         end
     )
 
+-- Load the library from the script (if not already loaded)
+local Library = loadstring(game:HttpGet('https://pastebin.com/raw/7Tk5QM6R'))()
+
+-- Set up the watermark connection
+local FrameTimer = tick()
+local FrameCounter = 0
+local FPS = 240
+
+-- Create the watermark that shows FPS and Ping
+local WatermarkConnection = game:GetService("RunService").RenderStepped:Connect(function()
+    FrameCounter += 1
+
+    -- Update FPS every second
+    if (tick() - FrameTimer) >= 1 then
+        FPS = FrameCounter
+        FrameTimer = tick()
+        FrameCounter = 0
+    end
+
+    -- Set the watermark text with the same format
+    Library:SetWatermark(('Venus.tech | %s fps | %s ms'):format(
+        math.floor(FPS),
+        math.floor(game:GetService('Stats').Network.ServerStatsItem['Data Ping']:GetValue())
+    ))
+end)
 
 local repo = 'https://raw.githubusercontent.com/LionTheGreatRealFrFr/MobileLinoriaLib/main/'
 
@@ -458,17 +483,7 @@ Tar:AddDropdown(
             end
         }
     )
-Tar:AddToggle(
-        "Enable AutoReload",
-        {
-            Text = "Enable AutoReload",
-            Default = false,
-            Tooltip = "Enable",
-            Callback = function(state)
-               jamkles.AutoReload = state
-            end
-        }
-    ) 
+
 
 
 Res:AddToggle(
