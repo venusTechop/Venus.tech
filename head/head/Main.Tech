@@ -63,7 +63,7 @@ end
 
 print("✅ xaxaxaxaxaxaxa")
 
-
+getgenv().jamkles = {
     ["Enabled"] = true,
     ["AimPart"] = "Head",
     ["Prediction"] = 0.12588,
@@ -498,19 +498,7 @@ Res:AddToggle(
         }
     )
 
-Res:AddDropdown(
-        "Resolver",
-        {
-            Values = {"Velocity"},
-            Default = 1,
-            Multi = false,
-            Text = "Resolver Mode",
-            Tooltip = "Choose a Resolver",
-            Callback = function(value)
-                jamkles.Resolver.Method = value
-            end
-        }
-    )
+
 
 Tri:AddToggle(
         "Enable TriggerBot",
