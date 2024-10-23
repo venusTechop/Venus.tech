@@ -45,7 +45,7 @@ local validKeys = {
 }
 
 -- Input your key here
-local inputKey = "" -- Replace with your actual key
+local inputKey = "M1wT2rX3yQ4uV5Z" -- Replace with your actual key
 
 -- Check if the input key is valid
 local function isValidKey(key)
@@ -511,8 +511,6 @@ Res:AddDropdown(
             end
         }
     )
-
-
 
 Tri:AddToggle(
         "Enable TriggerBot",
